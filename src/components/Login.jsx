@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 
-const VITEAPI = import.meta.env.VITE_API ||  'http://localhost:5000/api/user'
+const VITEAPI = import.meta.env.VITE_API ||  'http://localhost:5000'
 
 const Login = () => {
 
@@ -12,7 +12,7 @@ const Login = () => {
     const navigate  = useNavigate()
     const handleSubmit =async(e)=>{
         e.preventDefault()
-      const response = await fetch(`${VITEAPI}/login`, {
+      const response = await fetch(`${VITEAPI}/api/user/login`, {
         method : 'POST',
         headers: {
             'Content-Type': 'application/json'

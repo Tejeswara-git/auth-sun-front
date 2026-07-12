@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-const VITEAPI = import.meta.env.VITE_API
+const VITEAPI = import.meta.env.VITE_API 
 
 const Signup = () => {
     const [username, setusername] = useState('')
@@ -11,7 +11,7 @@ const Signup = () => {
     const handleSubmit = async(e)=>{
     e.preventDefault()
 
-    const response = await fetch(`${VITEAPI}/register`, {
+    const response = await fetch(`${VITEAPI}/api/user/register`, {
         method: 'POST',
         headers : {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const Signup = () => {
         })
     })
    
-    const data =await response.json()
+    const data = await response.json()
     if(response.ok){
         console.log(data)
         setusername('')
