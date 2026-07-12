@@ -10,8 +10,9 @@ const Signup = () => {
 
     const handleSubmit = async(e)=>{
     e.preventDefault()
-console.log(import.meta.env.VITE_API);
-    const response = await fetch(`${VITEAPI}/api/user/register`, {
+    const url = `${VITEAPI}/api/user/register`;
+console.log("Request URL:", url);
+    const response = await fetch(url, {
         method: 'POST',
         headers : {
             'Content-Type': 'application/json'
